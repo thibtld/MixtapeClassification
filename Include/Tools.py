@@ -13,7 +13,7 @@ def spectro():
 def main(args):
 
     audio_file = AudioSegment.from_file(r"C:\Users\thiba\PycharmProjects\MixClassification\TakeMeToYourParadise.mp3")
-    frame_interet = audio_file[:5000]
+    frame_interet = audio_file[:6*60+30]
     del audio_file
     sample = np.array(frame_interet.get_array_of_samples(), dtype=np.float32).reshape((-1, frame_interet.channels)) / (
             1 << (8 * frame_interet.sample_width - 1))
